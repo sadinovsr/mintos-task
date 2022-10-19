@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mintos-task/static/css/main.bd2158f3.css",
+    "main.js": "/mintos-task/static/js/main.1c95895e.js",
+    "static/js/787.425b8b4c.chunk.js": "/mintos-task/static/js/787.425b8b4c.chunk.js",
+    "index.html": "/mintos-task/index.html",
+    "main.bd2158f3.css.map": "/mintos-task/static/css/main.bd2158f3.css.map",
+    "main.1c95895e.js.map": "/mintos-task/static/js/main.1c95895e.js.map",
+    "787.425b8b4c.chunk.js.map": "/mintos-task/static/js/787.425b8b4c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd2158f3.css",
+    "static/js/main.1c95895e.js"
+  ]
+}
