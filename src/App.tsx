@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import CurrencySelector from './components/CurrencySelector/CurrencySelector';
+import { DataItem } from './types';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [data, changeData] = useState([
+    { name: 'EUR', checked: false },
+    { name: 'PLN', checked: false },
+    { name: 'GEL', checked: false },
+    { name: 'DKK', checked: false },
+    { name: 'CZK', checked: false },
+    { name: 'GBP', checked: false },
+    { name: 'SEK', checked: false },
+    { name: 'USD', checked: false },
+    { name: 'RUB', checked: false },
+  ]);
+
+  const changeChecked = (e: React.MouseEvent<HTMLElement>, index: number) => {
+    e.preventDefault();
+    let newData = [...data]
+    newData[index].checked = !newData[index].checked;
+    changeData(newData);
+  };
+
+  const changeCheckedByName = (name: string) => {
+    let newData = [...data]
+    const index = newData.findIndex((item: DataItem) => item.name === name)
+    newData[index].checked = !newData[index].checked;
+    changeData(newData);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CurrencySelector
+        data={data}
+        changeChecked={changeChecked}
+        changeCheckedByName={changeCheckedByName}
+      />
     </div>
   );
-}
+};
 
 export default App;
